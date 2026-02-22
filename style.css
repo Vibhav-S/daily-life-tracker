@@ -1,0 +1,217 @@
+:root {
+  --bg: #eaf2ff;
+  --card: #ffffff;
+  --text: #111;
+  --muted: #666;
+
+  --green-bg: #e6f7ed;
+  --green-text: #1e7f43;
+  --green-border: #2ecc71;
+
+  --red-bg: #fdeaea;
+  --red-text: #a83232;
+  --red-border: #e74c3c;
+
+  --accent1: #667eea;
+  --accent2: #764ba2;
+}
+
+body.dark {
+  --bg: #121212;
+  --card: #1f1f1f;
+  --text: #f1f1f1;
+  --muted: #aaa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+}
+
+.side {
+  width: 320px;
+  padding: 16px;
+  border-radius: 16px;
+  background:
+    linear-gradient(var(--bg), var(--bg)) padding-box,
+    linear-gradient(135deg, var(--accent1), var(--accent2)) border-box;
+  border: 2px solid transparent;
+}
+
+.side.hidden { display: none; }
+
+@media (max-width: 768px) {
+  .app { flex-direction: column; }
+  .side { width: 100%; }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+}
+
+#menuToggle, #darkToggle {
+  padding: 6px 10px;
+}
+
+/* Warning */
+.warning {
+  background: #fff3cd;
+  color: #856404;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: none;
+  font-size: 13px;
+}
+
+/* HABITS */
+.habit {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.habit input {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+.habit label {
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.habit.checked label {
+  background: var(--green-bg);
+  color: var(--green-text);
+  border: 1px solid var(--green-border);
+}
+
+.habit.missed label {
+  background: var(--red-bg);
+  color: var(--red-text);
+  border: 1px solid var(--red-border);
+}
+
+/* STATS */
+.streak {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.stat-card { margin-bottom: 12px; }
+
+.progress-bar {
+  height: 12px;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar div {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+}
+
+/* CALENDAR */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  font-weight: bold;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.calendar-grid div {
+  background: var(--card);
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.calendar-grid div.today {
+  outline: 2px solid var(--accent1);
+}
+
+.calendar-grid span {
+  display: block;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+/* DATE TIME BOX */
+.datetime-box {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--card);
+  text-align: center;
+}
+
+.datetime-box .day {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.datetime-box .date {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.datetime-box .time {
+  font-size: 18px;
+  margin-top: 6px;
+  letter-spacing: 1px;
+}.greeting {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 6px 0 12px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--card);
+  text-align: center;
+}

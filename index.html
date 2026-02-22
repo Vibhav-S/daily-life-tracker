@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Life Tracker</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#667eea">
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <div class="container">
+    <header>
+      <h1>Daily Life Tracker</h1>
+      <div class="header-actions">
+        <button id="menuToggle">☰</button>
+        <button id="darkToggle">🌙</button>
+      </div>
+    </header>
+
+    <div id="greeting" class="greeting"></div>
+    <div id="missedWarning" class="warning"></div>
+    <div id="habits"></div>
+    <button id="saveBtn">Save Day</button>
+  </div>
+
+  <div class="side">
+    <div id="streak" class="streak"></div>
+
+    <div class="stat-card">
+      <div id="todayStat"></div>
+      <div class="progress-bar"><div id="todayBar"></div></div>
+    </div>
+
+    <div class="stat-card">
+      <div id="weekStat"></div>
+      <div class="progress-bar"><div id="weekBar"></div></div>
+    </div>
+
+    <div class="stat-card">
+      <div id="monthStat"></div>
+      <div class="progress-bar"><div id="monthBar"></div></div>
+    </div>
+
+    <div class="calendar-header">
+      <button id="prevMonth">◀</button>
+      <span id="calendarTitle"></span>
+      <button id="nextMonth">▶</button>
+    </div>
+
+    <div class="calendar-grid" id="calendar"></div>
+    <div id="dateTimeBox" class="datetime-box"></div>
+  </div>
+
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
